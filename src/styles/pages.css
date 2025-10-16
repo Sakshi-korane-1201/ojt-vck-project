@@ -1,0 +1,296 @@
+
+.page-container {
+  max-width: 960px;
+  height: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+ }
+
+.page-container h1 {
+  color: #007BFF;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.5em;
+}
+
+.page-container h2 {
+  color: #343A40;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.page-container p {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.page-container ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.page-container li {
+  margin-bottom: 8px;
+}
+
+.call-to-action {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.call-to-action .btn {
+  display: inline-block;
+  background-color: #28A745;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.call-to-action .btn:hover {
+  background-color: #218838;
+}
+
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  
+}
+
+.hero-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  filter: brightness(60%);
+ 
+}
+
+.hero-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  width: 90%;
+ 
+}
+
+.hero-overlay-text h1 {
+  color: white;
+  font-size: 3.5em;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+}
+
+.hero-overlay-text p {
+  color: white;
+  font-size: 1.3em;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-btn {
+  background-color: #28A745;
+  font-size: 1.2em;
+  padding: 15px 30px;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  }
+
+.image-gallery img:hover {
+  transform: scale(1.03);
+  
+}
+
+
+.admissions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-color: #F8F9FA;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  
+}
+
+.admissions-table th,
+.admissions-table td {
+  border: 1px solid #DEE2E6;
+  padding: 12px;
+  text-align: left;
+  font-size: 0.95em;
+}
+
+.admissions-table th {
+  background-color: #E9ECEF;
+  font-weight: bold;
+  color: #343A40;
+}
+
+.admissions-table tbody tr:nth-child(even) {
+  background-color: #F2F2F2;
+  
+}
+
+.admissions-table tbody tr:hover {
+  background-color: #E2F0FF;
+  
+}
+
+.page-container ol {
+  margin-left: 25px;
+  margin-bottom: 20px;
+  list-style-type: decimal;
+  color: #555;
+}
+
+.page-container ol li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+
+.video-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  }
+
+.video-caption {
+  text-align: center;
+  padding: 10px;
+  color: #777;
+  font-style: italic;
+  background-color: #F0F0F0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+
+@keyframes fadeInUptoBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    
+  }
+}
+
+
+.animate-fade-in-up {
+  animation: fadeInUptoBottom 1s ease-out forwards;
+
+}
+
+
+@media (max-width: 768px) {
+  .page-container {
+    margin: 15px auto;
+    padding: 15px;
+  
+  }
+
+  .hero-section {
+    height: 250px;
+  
+  }
+
+  .hero-overlay-text h1 {
+    font-size: 2.2em;
+    
+  }
+
+  .hero-overlay-text p {
+    font-size: 1em;
+    
+  }
+
+  .hero-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+    
+  }
+
+  .image-gallery img {
+    height: 180px;
+    
+  }
+
+  .admissions-table thead,
+  .admissions-table tbody,
+  .admissions-table th,
+  .admissions-table td,
+  .admissions-table tr {
+    display: block;
+    
+    width: auto;
+    
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .page-container {
+    padding: 10px;
+  }
+
+  .hero-overlay-text h1 {
+    font-size: 1.8em;
+  }
+
+  .hero-overlay-text p {
+    font-size: 0.9em;
+  }
+}

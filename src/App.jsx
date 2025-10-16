@@ -1,61 +1,55 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import Header from "./Components/Headers/Header";
+import Footer from "./Components/Footer/Footer";
+import ContactPage from "./Pages/ContactPage";
+import "./styles/pages.css";
+import AboutPage from "./Pages/AboutPage";
+import CoursesPage from "./Pages/CoursesPage";
+import AdmissionsPage from "./Pages/AdmissionPage";
+import NotFoundPage from "./Pages/NotFoundPage";
+import ChatbotComponent from "./Components/Chatbot/ChatbotComponents";
+import { useState } from "react";
+import DeveloperInfoPopup from "./Components/DeveloperInfo/DeveloperInfoPopup";
 
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
-// export default App
-
-
-import React from 'react'
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import './App.css'
-import HomePage from './Pages/HomePage'
-import AdmissionPage from './Pages/AdmissionPage'
-import AboutPage from './Pages/AboutPage'
-import CoursesPage from './Pages/CoursesPage'
-import ContactPage from './Pages/ContactPage'
-
-
-const App = () => {
-  return(
+function App() {
+  const [showPopup, setShowPopup] = useState(true);
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+  return (
+    <>
+    <div>
+        
+        <DeveloperInfoPopup
+          show={showPopup}
+          onClose={handleClosePopup}
+          studentName="Sakshi Sachin Korane"
+          studentPhotoUrl="/images/ssk.jpg" 
+          uniqueMessage="Learned so much during this OJT! This app showcases my independent coding and deployment skills"
+        />
+      </div>
+      
     <Router>
-      <Routes>
-        <Route path ="/HomePage" element={<HomePage/>}/>
-        <Route path ="/AdmissionPage" element={<AdmissionPage/>}/>
-        <Route path="/AboutPage" element={<AboutPage/>}/>
-        <Route path="/CoursesPage" element={<CoursesPage/>}/>
-        <Route path="/ContactPage" element={<ContactPage/>}/>
-      </Routes>
+      <div className="main-layout">
+        <Header />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/admissions" element={<AdmissionsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+        <Footer />
+        <ChatbotComponent/>
+      </div>
     </Router>
+    </>
   );
-};
-export default App
+}
+export default App;
+
